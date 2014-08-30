@@ -1,0 +1,5 @@
+
+# Also execute everything in ~/.bashrc if file exists.
+if [ -f ~/.bashrc ]; then
+  . ~/.bashrc
+fi

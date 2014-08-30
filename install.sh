@@ -21,3 +21,7 @@ if !  (grep -E '^[^#]*set\s+completion-ignore-case\b' $HOME/.inputrc > /dev/null
   cat ./config_files/inputrc_ignore_case >> $HOME/.inputrc
 fi
 
+# Source ~/.bashrc from ~/.bash_profile unless already being sourced.
+if !  (grep -E '^[^#]*((^|\s)[.]|\bsource)\s+(~|[\$]HOME)/.bashrc\b' $HOME/.bash_profile > /dev/null) ; then
+  cat ./config_files/bash_profile_source_bashrc >> $HOME/.bash_profile
+fi
